@@ -5,9 +5,36 @@
     <description>写最简单的代码</description>
     <link>http://yangxlei.github.io</link>
     <atom:link href="http://yangxlei.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Aug 2015 16:11:07 +0800</pubDate>
-    <lastBuildDate>Fri, 14 Aug 2015 16:11:07 +0800</lastBuildDate>
+    <pubDate>Fri, 14 Aug 2015 17:34:19 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Aug 2015 17:34:19 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>技能树</title>
+        <description>&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;技能&lt;/td&gt;
+      &lt;td&gt;描述&lt;/td&gt;
+      &lt;td&gt;评分&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Android&lt;/td&gt;
+      &lt;td&gt;应用层精通&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Fri, 14 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://yangxlei.github.io/%E6%8A%80%E8%83%BD/2015/08/14/%E6%88%91%E7%9A%84%E6%8A%80%E8%83%BD%E6%A0%91.html</link>
+        <guid isPermaLink="true">http://yangxlei.github.io/%E6%8A%80%E8%83%BD/2015/08/14/%E6%88%91%E7%9A%84%E6%8A%80%E8%83%BD%E6%A0%91.html</guid>
+        
+        
+        <category>技能</category>
+        
+      </item>
     
       <item>
         <title>Example 2</title>
