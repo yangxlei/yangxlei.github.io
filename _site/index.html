@@ -46,6 +46,51 @@
       <td>应用层精通</td>
       <td>8</td>
     </tr>
+    <tr>
+      <td>iOS</td>
+      <td>语法过关，多线程特性，内存管理, 高级特性需要深入</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Swift</td>
+      <td>尽快学习</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>C++</td>
+      <td>了解基本语法及概念, 然并卵</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>熟悉基本语法、指针的使用，要用 C 语言做些项目深入巩固</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Lua</td>
+      <td>曾经也算会，忘了。 下次用 Lua 再搞个项目玩</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>NDK</td>
+      <td>搞了这么多年 Android，居然还没玩过 NDK</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>赶快学习!</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Linux</td>
+      <td>熟练使用命令行，需要深入了解系统原理</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Shell</td>
+      <td>也算会过，忘了</td>
+      <td>0</td>
+    </tr>
   </tbody>
 </table>
 
@@ -53,93 +98,6 @@
       </div>
       <footer>
         <p><a href="/%E6%8A%80%E8%83%BD/2015/08/14/%E6%88%91%E7%9A%84%E6%8A%80%E8%83%BD%E6%A0%91.html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    <article>
-      <header>
-        <h2><a href="/example/2014/09/11/example-2.html">Example 2</a></h2>
-        <p><time datetime="2014-09-11T06:37:00+08:00">Sep 11, 2014</time> • example</p>
-      </header>
-      <div>
-<p><strong>Basic</strong></p>
-
-<p>Neque porro <em>quisquam</em> est, qui <strong>dolorem</strong> ipsum, quia <strong><em>dolor</em></strong> sit, amet, <a href="http://cjdns.info/">consectetur</a>, adipisci velit.</p>
-
-<ul>
-  <li>lorem</li>
-  <li>ipsum</li>
-</ul>
-
-<ol>
-  <li>dolor</li>
-  <li>sit</li>
-</ol>
-
-
-      </div>
-      <footer>
-        <p><a href="/example/2014/09/11/example-2.html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    <article>
-      <header>
-        <h2><a href="/example/2014/09/11/example.html">Example</a></h2>
-        <p><time datetime="2014-09-11T06:37:00+08:00">Sep 11, 2014</time> • example</p>
-      </header>
-      <div>
-<p><strong>Basic</strong></p>
-
-<p>Neque porro <em>quisquam</em> est, qui <strong>dolorem</strong> ipsum, quia <strong><em>dolor</em></strong> sit, amet, <a href="http://cjdns.info/">consectetur</a>, adipisci velit.</p>
-
-<ul>
-  <li>lorem</li>
-  <li>ipsum</li>
-</ul>
-
-<ol>
-  <li>dolor</li>
-  <li>sit</li>
-</ol>
-
-<table>
-  <thead>
-    <tr>
-      <th>First Header</th>
-      <th>Second Header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Table Cell</td>
-      <td>Table Cell</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Blockquote</strong></p>
-
-<blockquote>
-  <p>They who can give up essential liberty to obtain a little temporary safety, deserve neither liberty nor safety.</p>
-
-  <p><em>Benjamin Franklin</em></p>
-</blockquote>
-
-<p><strong>Code</strong></p>
-
-<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">void</span> <span class="nf">asyncEnabled</span><span class="p">(</span><span class="n">Dict</span><span class="o">*</span> <span class="n">args</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">vAdmin</span><span class="p">,</span> <span class="n">String</span><span class="o">*</span> <span class="n">txid</span><span class="p">,</span> <span class="k">struct</span> <span class="n">Allocator</span><span class="o">*</span> <span class="n">requestAlloc</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">struct</span> <span class="n">Admin</span><span class="o">*</span> <span class="n">admin</span> <span class="o">=</span> <span class="n">Identity_check</span><span class="p">((</span><span class="k">struct</span> <span class="n">Admin</span><span class="o">*</span><span class="p">)</span> <span class="n">vAdmin</span><span class="p">);</span>
-    <span class="kt">int64_t</span> <span class="n">enabled</span> <span class="o">=</span> <span class="n">admin</span><span class="o">-&gt;</span><span class="n">asyncEnabled</span><span class="p">;</span>
-    <span class="n">Dict</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Dict_CONST</span><span class="p">(</span><span class="n">String_CONST</span><span class="p">(</span><span class="s">&quot;asyncEnabled&quot;</span><span class="p">),</span> <span class="n">Int_OBJ</span><span class="p">(</span><span class="n">enabled</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">);</span>
-    <span class="n">Admin_sendMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span> <span class="n">txid</span><span class="p">,</span> <span class="n">admin</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-
-
-      </div>
-      <footer>
-        <p><a href="/example/2014/09/11/example.html">read more &raquo;</a></p>
       </footer>
     </article>
     
