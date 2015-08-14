@@ -5,6 +5,7 @@ description: "Really cool blog about ... something"
 more: "read more"
 url: "http://niklabs.me"
 baseurl: "/contrast" # comment out if in root directory
+markdown: redcarpet
 
 comments:
     disqus: "niklasbuschmann"
