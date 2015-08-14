@@ -5,8 +5,8 @@
     <description>写最简单的代码</description>
     <link>http://yangxlei.github.io</link>
     <atom:link href="http://yangxlei.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Aug 2015 17:40:37 +0800</pubDate>
-    <lastBuildDate>Fri, 14 Aug 2015 17:40:37 +0800</lastBuildDate>
+    <pubDate>Fri, 14 Aug 2015 17:42:19 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Aug 2015 17:42:19 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -16,7 +16,7 @@
     &lt;tr&gt;
       &lt;td&gt;技能&lt;/td&gt;
       &lt;td&gt;描述&lt;/td&gt;
-      &lt;td&gt;评分&lt;/td&gt;
+      &lt;td&gt;评分(满分10)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Android&lt;/td&gt;
@@ -25,7 +25,7 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;iOS&lt;/td&gt;
-      &lt;td&gt;语法过关，多线程特性，内存管理, 高级特性需要深入&lt;/td&gt;
+      &lt;td&gt;语法过关，多线程特性，内存管理; 高级特性需要深入&lt;/td&gt;
       &lt;td&gt;7&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
