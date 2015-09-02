@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>杨小磊的 Blog</title>
+    <title>杨磊的 Blog</title>
     <description>写最简单的代码</description>
     <link>http://yangxlei.github.io</link>
     <atom:link href="http://yangxlei.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 02 Sep 2015 15:49:02 +0800</pubDate>
-    <lastBuildDate>Wed, 02 Sep 2015 15:49:02 +0800</lastBuildDate>
+    <pubDate>Wed, 02 Sep 2015 15:55:45 +0800</pubDate>
+    <lastBuildDate>Wed, 02 Sep 2015 15:55:45 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -111,6 +111,14 @@ mv vimrc .vimrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 下载仓库 &lt;a href=&quot;https://github.com/XVimProject/XVim&quot;&gt;XVim&lt;/a&gt;, 使用 xcode 打开运行。重启 xcode 即可。&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;IDE + VIM 结合简直就是神器&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;android-studio-&quot;&gt;Android Studio 快捷键配置&lt;/h2&gt;
+&lt;p&gt;配置文件&lt;a href=&quot;../../../../files/Eclipse _Mac OS X_ copy.xml&quot;&gt;Eclipse &lt;em&gt;Mac OS X&lt;/em&gt; copy.xml&lt;/a&gt;
+已调整好各个对应到 Eclipse 的快捷键,下载文件放在&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~/Library/Preferences/AndroidStudio1.2/keymaps 目录下&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;重启 Android Studio， 偏好设置中选择对应的配置文件。&lt;/strong&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 02 Sep 2015 00:00:00 +0800</pubDate>

@@ -1,0 +1,34 @@
+<keymap version="1" name="Eclipse (Mac OS X) copy" parent="Eclipse (Mac OS X)">
+  <action id="CallHierarchy" />
+  <action id="EditSource">
+    <mouse-shortcut keystroke="meta button1" />
+  </action>
+  <action id="Find">
+    <keyboard-shortcut first-keystroke="meta F" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift meta O" />
+  </action>
+  <action id="GuiDesigner.GoToListener" />
+  <action id="OptimizeImports">
+    <keyboard-shortcut first-keystroke="shift meta R" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="control alt ENTER" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="control alt DOWN" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="control alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="control alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="control alt UP" />
+  </action>
+  <action id="TypeHierarchy">
+    <keyboard-shortcut first-keystroke="meta T" />
+  </action>
+</keymap>
