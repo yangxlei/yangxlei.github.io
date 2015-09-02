@@ -1,0 +1,54 @@
+<h2 id="android-">Android 项目架构</h2>
+
+<p><strong><em>工程目录结构</em></strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件名, 目录</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Constants 类</td>
+      <td>定义 App 中的常量，如 api 接口，host 等</td>
+    </tr>
+    <tr>
+      <td>Application</td>
+      <td>在主进程中初始化相应的环境</td>
+    </tr>
+    <tr>
+      <td>Activitys 目录</td>
+      <td>存放相应的界面类，需要根据需求模块建立子目录</td>
+    </tr>
+    <tr>
+      <td>Fragments 目录</td>
+      <td>存放使用 Fragment 实现的界面，根据需求模块建立对应的子目录</td>
+    </tr>
+    <tr>
+      <td>Adapter 目录</td>
+      <td>存放 List 对应的 Adapter， 应该与每个列表 Activity 对应名称</td>
+    </tr>
+    <tr>
+      <td>Models 目录</td>
+      <td>对应的 Model 存放的目录。所有的 Model 必须继承自 Common 中的 IBaseModel</td>
+    </tr>
+    <tr>
+      <td>api 目录</td>
+      <td>按模块对接口进行分类</td>
+    </tr>
+    <tr>
+      <td>Views</td>
+      <td>自定义的控件， 建议实现自定义控件时尽量考虑通用性，能够重复利用。可以的话，迁移到 Common 中</td>
+    </tr>
+    <tr>
+      <td>utils 自定义工具类</td>
+      <td>尽量采用 Common 中的工具类</td>
+    </tr>
+    <tr>
+      <td>EventBus</td>
+      <td>广播工具</td>
+    </tr>
+  </tbody>
+</table>
