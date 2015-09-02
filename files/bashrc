@@ -1,0 +1,7 @@
+#export ANDROID_BUILD=/Users/yanglei/android-sdks/build-tools/android-4.4W
+#export ANT_HOME=/User/yanglei/ant/bin
+#export PATH=ANDROID_BUILD:/opt/local/bin:/opt/local/sbin:/Users/yanglei/android-sdks/platform-tools:/Users/yanglei/android-sdks/tools:/Users/yanglei/android-sdks/apktool:$PATH
+source ~/.bashrc.dev
+source ~/.git_completion.bash
+source ~/.bash-git-prompt/gitprompt.sh
+

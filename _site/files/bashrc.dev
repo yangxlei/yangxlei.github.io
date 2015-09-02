@@ -1,0 +1,32 @@
+# 设置 vim 为默认编辑器，比系统默认的 Nano 好用得多
+export EDITOR=vim
+
+# 在 提交代码前、更新/合并代码时，用图形界面 diff 工具审核代码的更改，可以大大减少出错的概率
+alias svndiff='svn diff --diff-cmd meld -x "-a"'
+alias grep='grep --color'
+alias ls='ls -G'
+
+# 打开 core dump
+# ulimit -c unlimited
+# core file contains at most 20M blocks
+# if a block is 512 bytes, it's 1GB
+ulimit -c 2097152
+
+# 配置更合理的命令行提示符
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+
+# alt-p, alt-n 在命令历史中搜索命令行
+case "$-" in
+*i*)
+# 仅当是交互式 shell 的时候，才激活
+bind  '"\ep":history-search-backward'
+bind  '"\en":history-search-forward'
+esac
+
+# export JAVA_HOME=/usr/local/jdk1.7.0
+# export PATH=$JAVA_HOME/bin:$PATH
+
+# export NDK_ROOT=/usr/local/android/android-ndk-r8e
+
+# alias eclipse=/usr/local/android/adt-bundle-linux-x86_64/eclipse/eclipse

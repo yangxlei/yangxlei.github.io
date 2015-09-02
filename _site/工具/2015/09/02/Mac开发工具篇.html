@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="写最简单的代码">
+    <title> Mac开发工具 › 杨小磊的 Blog</title>
+    <link rel="canonical" href="http://yangxlei.github.io/%E5%B7%A5%E5%85%B7/2015/09/02/Mac%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AF%87.html">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="杨小磊的 Blog &raquo; Feed" href="/feed.xml">
+    <script src="//niklasbuschmann.disqus.com/embed.js" async></script>
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">杨小磊的 Blog</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    
+    <article>
+      <header>
+        <h2><a href="/%E5%B7%A5%E5%85%B7/2015/09/02/Mac%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AF%87.html">Mac开发工具</a></h2>
+        <p><time datetime="2015-09-02T00:00:00+08:00">Sep 2, 2015</time> • 工具</p>
+      </header>
+      <div>
+<h1 id="mac-">整理个人使用 Mac 开发的一些工具</h1>
+
+<h2 id="iterm2app">终端 iTerm2.app</h2>
+
+<p>放弃系统自带的 terminal 吧。 </p>
+
+<blockquote>
+  <p>iTerm2 is a terminal emulator for Mac OS X that does amazing things. </p>
+</blockquote>
+
+<p>下载地址: <a href="http://www.iterm2.com/">iTerms</a></p>
+
+<p>偏好设置中配一下自己喜欢的颜色方案。</p>
+
+<p>我的终端配置文件: <a href="../../../../files/bashrc.dev">.bash.dev</a></p>
+
+<p>下载文件，拷贝到当前用户根目录下</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mv bash.dev .bash.dev</code></pre></div>
+
+<p>打开 .bashrc 文件， 增加一行</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.bashrc.dev</code></pre></div>
+
+<p>在终端下执行:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.bashrc</code></pre></div>
+
+<h2 id="brew">brew</h2>
+<blockquote>
+  <p><a href="http://brew.sh/index_zh-cn.html">HomeBrew</a> OS X 不可或缺的套件管理器 </p>
+</blockquote>
+
+<p><em>安装方法：打开终端，粘贴下面的命令</em></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span></code></pre></div>
+
+<p><em>安装完成之后，更新一下资源库:</em></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew update</code></pre></div>
+
+<h2 id="meld">meld</h2>
+<blockquote>
+  <p>一个文本比较工具
+安装方法：</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew install mebrew/x11/meld</code></pre></div>
+
+<h2 id="xquartz">Xquartz</h2>
+<blockquote>
+  <p>The XQuartz project is an open-source effort to develop a version of the X.Org X Window System that runs on OS X. Together with supporting libraries and applications, it forms the X11.app that Apple has shipped with OS X since version 10.5. </p>
+</blockquote>
+
+<p>下载地址： <a href="http://xquartz.macosforge.org/landing/">Xquartz</a></p>
+
+<p><em>下载安装后重启电脑</em></p>
+
+<h2 id="git-">Git 命令行</h2>
+<blockquote>
+  <p>meld 和 Xquartz 是为了配合在终端下使用 Git. 
+<strong><em>首先，在 xcode 下同意许可协议.</em></strong></p>
+</blockquote>
+
+<h3 id="git-diff--">git diff  工具</h3>
+<p>下载文件 <a href="../../../../files/git_meld.sh">git_meld.sh</a> 放在当前用户根目录下.
+修改文件执行权限：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/
+chmod +x git_meld.sh</code></pre></div>
+
+<p>配置 git diff 工具：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git config --global diff.external ~/git-meld.sh</code></pre></div>
+
+<h3 id="git-completion--tab-">git completion 按 tab 键自动完成命令</h3>
+<p>下载文件<a href="../../../../files/git_completion.sh">git_completion.sh</a> 放在当前用户根目录下.
+同样修改执行权限：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/
+chmod +x git_meld.sh</code></pre></div>
+
+<h3 id="git-prompt--git-">git prompt 进入 Git 仓库，自动查看当前仓库所在的分支，状态</h3>
+<p>参考<a href="https://github.com/magicmonty/bash-git-prompt">bash-git-prompt</a> 中使用 brew 方式安装。</p>
+
+<h2 id="vim">Vim</h2>
+<p><em>终端下的 Vim 配色方案</em>
+下载文件<a href="../../../../files/vimrc">.vimrc</a> 放在当前用户根目录下
+执行</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/
+mv vimrc .vimrc</code></pre></div>
+
+<p><em>Android Studio 下的 Vim 插件 
+在 Android Studio 偏好设置，插件管理中搜索 IdeaVim, 选择安装</em> 
+<br />
+<em>Xcode Vim 插件
+下载仓库 <a href="https://github.com/XVimProject/XVim">XVim</a>, 使用 xcode 打开运行。重启 xcode 即可。</em></p>
+
+<p><strong><em>IDE + VIM 结合简直就是神器</em></strong></p>
+
+
+      </div>
+      
+      
+      <div id="disqus_thread"></div>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </article>
+
+    <footer>
+      <span><a href="http://yangxlei.github.io">杨磊</a></span>
+      <span><a href="https://github.com/yangxlei/"><i class="fa fa-github-square"></i></a></span>
+      <span>&copy; 2015</span>
+    </footer>
+  </body>
+</html>
