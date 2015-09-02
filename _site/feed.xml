@@ -5,8 +5,8 @@
     <description>写最简单的代码</description>
     <link>http://yangxlei.github.io</link>
     <atom:link href="http://yangxlei.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 02 Sep 2015 15:32:15 +0800</pubDate>
-    <lastBuildDate>Wed, 02 Sep 2015 15:32:15 +0800</lastBuildDate>
+    <pubDate>Wed, 02 Sep 2015 15:47:55 +0800</pubDate>
+    <lastBuildDate>Wed, 02 Sep 2015 15:47:55 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -232,7 +232,7 @@ mv vimrc .vimrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;C++&lt;/td&gt;
-      &lt;td&gt;了解基本语法及概念, 然并卵&lt;/td&gt;
+      &lt;td&gt;了解基本语法及概念&lt;/td&gt;
       &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -247,8 +247,8 @@ mv vimrc .vimrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;NDK&lt;/td&gt;
-      &lt;td&gt;搞了这么多年 Android，居然还没玩过 NDK&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;很有意思&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Python&lt;/td&gt;
