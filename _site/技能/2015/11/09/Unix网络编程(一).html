@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     
     <meta name="description" content="学以致用">
-    <title>白杨</title>
-    <link rel="canonical" href="http://yangxlei.github.io/index.html">
+    <title> Unix网络编程一 › 白杨</title>
+    <link rel="canonical" href="http://yangxlei.github.io/%E6%8A%80%E8%83%BD/2015/11/09/Unix%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B(%E4%B8%80).html">
     <link href="/main.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="白杨 &raquo; Feed" href="/feed.xml">
-    
+    <script src="//niklasbuschmann.disqus.com/embed.js" async></script>
     
   </head>
   <body>
@@ -25,7 +25,6 @@
         </ul>
       </nav>
     </header>
-    
     
     
     <article>
@@ -75,215 +74,47 @@
   <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 
+<h2 id="section-1">服务端返回时间程序</h2>
 
-      </div>
-      <footer>
-        <p><a href="/%E6%8A%80%E8%83%BD/2015/11/09/Unix%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B(%E4%B8%80).html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    <article>
-      <header>
-        <h2><a href="/%E5%B7%A5%E5%85%B7/2015/09/02/Mac%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AF%87.html">Mac开发工具</a></h2>
-        <p><time datetime="2015-09-02T00:00:00+08:00">Sep 2, 2015</time> • 工具</p>
-      </header>
-      <div>
-<h1 id="mac-">整理个人使用 Mac 开发的一些工具</h1>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
 
-<h2 id="iterm2app">终端 iTerm2.app</h2>
+  <span class="kt">int</span> <span class="n">listenfd</span><span class="p">,</span> <span class="n">connfd</span><span class="p">;</span>
+  <span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">servaddr</span><span class="p">;</span>
 
-<p>放弃系统自带的 terminal 吧。 </p>
+  <span class="kt">char</span> <span class="n">buff</span><span class="p">[</span><span class="n">MAXLINE</span><span class="p">];</span>
+  <span class="kt">time_t</span> <span class="n">ticks</span><span class="p">;</span>
 
-<blockquote>
-  <p>iTerm2 is a terminal emulator for Mac OS X that does amazing things. </p>
-</blockquote>
+  <span class="n">listenfd</span> <span class="o">=</span> <span class="n">Socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 创建忘记字节流 </span>
 
-<p>下载地址: <a href="http://www.iterm2.com/">iTerms</a></p>
+  <span class="n">bzero</span><span class="p">(</span><span class="o">&amp;</span><span class="n">servaddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">servaddr</span><span class="p">));</span>
+  <span class="n">servaddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+  <span class="n">servaddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">htonl</span><span class="p">(</span><span class="n">INADDR_ANY</span><span class="p">);</span> <span class="c1">// 指定监听的地址为当前服务器任一网络接口地址</span>
+  <span class="n">servaddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="mi">9090</span><span class="p">);</span> <span class="c1">//  监听端口号</span>
 
-<p>偏好设置中配一下自己喜欢的颜色方案。</p>
+  <span class="n">Bind</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span> <span class="p">(</span><span class="n">SA</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">servaddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">servaddr</span><span class="p">));</span> <span class="c1">//绑定服务器地址和 sock 对象</span>
 
-<p>我的终端配置文件: <a href="../../../../files/bashrc.dev">.bashrc.dev</a></p>
+  <span class="n">Listen</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span> <span class="n">LISTENQ</span><span class="p">);</span> <span class="c1">// 开启监听</span>
 
-<p>下载文件，拷贝到当前用户根目录下</p>
+  <span class="k">for</span> <span class="p">(</span> <span class="p">;</span> <span class="p">;</span> <span class="p">)</span> <span class="p">{</span> 
+    <span class="n">connfd</span> <span class="o">=</span> <span class="n">Accept</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span> <span class="p">(</span><span class="n">SA</span> <span class="o">*</span><span class="p">)</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// 接受输入</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;connfd = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">connfd</span><span class="p">);</span>    <span class="n">ticks</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>   
+    <span class="n">snprintf</span><span class="p">(</span><span class="n">buff</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buff</span><span class="p">),</span> <span class="s">&quot;%.24s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ticks</span><span class="p">));</span> <span class="c1">// 写入数据到缓存</span>
+    <span class="n">Write</span><span class="p">(</span><span class="n">connfd</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">buff</span><span class="p">));</span> <span class="c1">// 将缓存中的数据写给接受者</span>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mv bash.dev .bash.dev</code></pre></div>
+    <span class="n">Close</span><span class="p">(</span><span class="n">connfd</span><span class="p">);</span> <span class="c1">// 关闭客户端连接</span>
+  <span class="p">}</span>
 
-<p>打开 .bashrc 文件， 增加一行</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.bashrc.dev</code></pre></div>
-
-<p>在终端下执行:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.bashrc</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
       </div>
-      <footer>
-        <p><a href="/%E5%B7%A5%E5%85%B7/2015/09/02/Mac%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AF%87.html">read more &raquo;</a></p>
-      </footer>
+      
+      
+      <div id="disqus_thread"></div>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
     </article>
-    
-    <article>
-      <header>
-        <h2><a href="/%E6%8A%80%E8%83%BD/2015/08/24/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">Java 多线程</a></h2>
-        <p><time datetime="2015-08-24T00:00:00+08:00">Aug 24, 2015</time> • 技能</p>
-      </header>
-      <div>
-<h2 id="java-">Java 多线程操作</h2>
-
-<p>现成从创建到消亡，要经历若干个状态。主要包括：创建(new), 就绪(runnable), 运行(running), 阻塞(blocked), 等待(waiting), time waiting, 消亡(dead);</p>
-
-<p><img src="imgs/Java线程状态.jpg" alt="Java现成状态转换" /></p>
-
-
-      </div>
-      <footer>
-        <p><a href="/%E6%8A%80%E8%83%BD/2015/08/24/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    <article>
-      <header>
-        <h2><a href="/%E5%B7%A5%E4%BD%9C/2015/08/19/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.html">项目结构</a></h2>
-        <p><time datetime="2015-08-19T00:00:00+08:00">Aug 19, 2015</time> • 工作</p>
-      </header>
-      <div>
-<h2 id="android-">Android 项目架构</h2>
-
-<p><strong><em>工程目录结构</em></strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>文件名, 目录</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Constants 类</td>
-      <td>定义 App 中的常量，如 api 接口，host 等</td>
-    </tr>
-    <tr>
-      <td>Application</td>
-      <td>在主进程中初始化相应的环境</td>
-    </tr>
-    <tr>
-      <td>Activitys 目录</td>
-      <td>存放相应的界面类，需要根据需求模块建立子目录</td>
-    </tr>
-    <tr>
-      <td>Fragments 目录</td>
-      <td>存放使用 Fragment 实现的界面，根据需求模块建立对应的子目录</td>
-    </tr>
-    <tr>
-      <td>Adapter 目录</td>
-      <td>存放 List 对应的 Adapter， 应该与每个列表 Activity 对应名称</td>
-    </tr>
-    <tr>
-      <td>Models 目录</td>
-      <td>对应的 Model 存放的目录。所有的 Model 必须继承自 Common 中的 IBaseModel</td>
-    </tr>
-    <tr>
-      <td>api 目录</td>
-      <td>按模块对接口进行分类</td>
-    </tr>
-    <tr>
-      <td>Views</td>
-      <td>自定义的控件， 建议实现自定义控件时尽量考虑通用性，能够重复利用。可以的话，迁移到 Common 中</td>
-    </tr>
-    <tr>
-      <td>utils 自定义工具类</td>
-      <td>尽量采用 Common 中的工具类</td>
-    </tr>
-    <tr>
-      <td>EventBus</td>
-      <td>广播工具</td>
-    </tr>
-  </tbody>
-</table>
-
-
-      </div>
-      <footer>
-        <p><a href="/%E5%B7%A5%E4%BD%9C/2015/08/19/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    <article>
-      <header>
-        <h2><a href="/%E6%8A%80%E8%83%BD/2015/08/14/%E6%88%91%E7%9A%84%E6%8A%80%E8%83%BD%E6%A0%91.html">技能树</a></h2>
-        <p><time datetime="2015-08-14T00:00:00+08:00">Aug 14, 2015</time> • 技能</p>
-      </header>
-      <div>
-<table>
-  <tbody>
-    <tr>
-      <td>技能</td>
-      <td>描述</td>
-      <td>评分(满分10)</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td>应用层精通</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td>语法过关，多线程特性，内存管理; 高级特性需要深入</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>Swift</td>
-      <td>尽快学习</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>C++</td>
-      <td>了解基本语法及概念</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>熟悉基本语法、指针的使用，要用 C 语言做些项目深入巩固</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Lua</td>
-      <td>曾经也算会，忘了。 下次用 Lua 再搞个项目玩</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>NDK</td>
-      <td>很有意思</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Python</td>
-      <td>赶快学习!</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>Linux</td>
-      <td>熟练使用命令行，需要深入了解系统原理</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Shell</td>
-      <td>也算会过，忘了</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-
-
-      </div>
-      <footer>
-        <p><a href="/%E6%8A%80%E8%83%BD/2015/08/14/%E6%88%91%E7%9A%84%E6%8A%80%E8%83%BD%E6%A0%91.html">read more &raquo;</a></p>
-      </footer>
-    </article>
-    
-    
 
     <footer>
       <span><a href="http://yangxlei.github.io">杨磊</a></span>
